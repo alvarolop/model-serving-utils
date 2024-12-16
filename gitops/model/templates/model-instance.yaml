@@ -73,6 +73,9 @@ spec:
         - '--tensor-parallel-size={{ .Values.model.accelerator.max }}'
         {{- end }}
         - '--distributed-executor-backend=mp'
+        {{- if .Values.model.embeddingsModel }}
+        - '--task embed'
+        {{- end }}
       command:
         - python
         - '-m'
