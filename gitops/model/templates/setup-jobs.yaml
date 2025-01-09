@@ -60,7 +60,7 @@ spec:
           command:
             - /bin/bash
           image: {{ .Values.setup.image }}
-          # imagePullPolicy: Always
+          imagePullPolicy: Always
           volumeMounts:
             - name: models-volume
               mountPath: /mnt/models
