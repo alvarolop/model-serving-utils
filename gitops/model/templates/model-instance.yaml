@@ -52,6 +52,7 @@ metadata:
     openshift.io/display-name: "{{ .Values.model.displayName }}"
     opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
   name: {{ .Values.model.name }}
+  namespace: {{ .Values.dataScienceProjectNamespace }}
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
