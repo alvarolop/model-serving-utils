@@ -88,8 +88,6 @@ spec:
         - '{{ .Values.model.toolCallParser }}'
         {{- end }}
         {{- if .Values.model.chatTemplate }}
-        - '--task'
-        - chat
         - '--chat-template'
         - '{{ .Values.model.chatTemplate }}'
         {{- end }}
