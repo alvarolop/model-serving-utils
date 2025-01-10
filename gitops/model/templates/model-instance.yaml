@@ -12,6 +12,7 @@ metadata:
   namespace: {{ .Values.dataScienceProjectNamespace }}
   labels:
     opendatahub.io/dashboard: 'true'
+    networking.knative.dev/visibility: cluster-local
 spec:
   predictor:
     maxReplicas: {{ .Values.model.maxReplicas }}
