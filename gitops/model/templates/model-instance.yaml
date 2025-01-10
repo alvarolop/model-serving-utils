@@ -12,6 +12,11 @@ metadata:
   namespace: {{ .Values.dataScienceProjectNamespace }}
   labels:
     opendatahub.io/dashboard: 'true'
+{{- if .Values.model.additionalLabels }}
+{{- range $key, $value := .Values.model.additionalLabels }}
+    {{ $key }}: "{{ $value }}"
+{{- end }}
+{{- end }}
 spec:
   predictor:
     maxReplicas: {{ .Values.model.maxReplicas }}
