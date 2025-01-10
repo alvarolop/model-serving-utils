@@ -10,6 +10,7 @@ metadata:
     opendatahub.io/managed: 'true'
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/hook: PreSync
     opendatahub.io/connection-type: {{ .Values.modelConnection.type }}
     openshift.io/display-name: {{ .Values.modelConnection.displayName }}
 stringData:
