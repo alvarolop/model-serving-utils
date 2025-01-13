@@ -103,6 +103,8 @@ spec:
       ports:
         - containerPort: 8080
           protocol: TCP
+      securityContext:
+        runAsUser: 0
       volumeMounts:
         - mountPath: /dev/shm
           name: shm
