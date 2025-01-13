@@ -92,7 +92,7 @@ spec:
         - '{{ .Values.model.chatTemplate }}'
         {{- end }}
       command:
-        - python3
+        - python
         - '-m'
         - vllm.entrypoints.openai.api_server
       env:
@@ -106,6 +106,8 @@ spec:
       volumeMounts:
         - mountPath: /dev/shm
           name: shm
+        - name: template-volume
+          mountPath: /etc/config
   multiModel: false
   supportedModelFormats:
     - autoSelect: true
@@ -115,3 +117,6 @@ spec:
         medium: Memory
         sizeLimit: {{ .Values.model.volumes.shm.sizeLimit }}
       name: shm
+    - name: template-volume
+      configMap:
+        name: vllm-template
