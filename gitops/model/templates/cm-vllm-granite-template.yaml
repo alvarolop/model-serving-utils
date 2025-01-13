@@ -5,7 +5,7 @@ metadata:
 data:
   tool_chat_template_granite.jinja: |
     {%- if tools %}
-        {{- '<|start_of_role|>available_tools<|end_of_role|>
+    {{- '<|start_of_role|>available_tools<|end_of_role|>
     ' }}
         {%- for tool in tools %}
         {{- tool | tojson(indent=4) }}
