@@ -92,7 +92,7 @@ spec:
         - '{{ .Values.model.chatTemplate }}'
         {{- end }}
       command:
-        - python
+        - python3
         - '-m'
         - vllm.entrypoints.openai.api_server
       env:
